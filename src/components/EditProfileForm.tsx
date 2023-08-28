@@ -1,6 +1,10 @@
+import UserType from "../types/auth";
 
-type Props = {}
-export default function EditProfileForm({}: Props) {
+
+type Props = {user:UserType|null}
+
+
+export default function EditProfileForm({user}: Props) {
   return (
     <div>EditProfileForm</div>
   )

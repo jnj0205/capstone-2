@@ -14,17 +14,18 @@ import { useState } from 'react'
 
 
 function App() {
+  const [user, setUser]=useState< UserType|null>(null)
  
 
   return (
     <div>
       <NavBar />
       <Routes>
-        <Route path='/login' element={<LoginForm /> } />
+        <Route path='/login' element={<LoginForm setUser={setUser} /> } />
         <Route path='/register' element={<RegisterForm /> } />
         <Route path='/' element={<Home /> } />
-        <Route path='/EditProfile'element={<EditProfileForm /> } />
-        <Route path='/ShoppingCart'element={<ShoppingCart /> } />
+        <Route path='/EditProfile'element={<EditProfileForm user={user}/> } />
+        <Route path='/ShoppingCart'element={<ShoppingCart user={user}/> } />
         <Route path='/Meniu'element={<Meniu /> } />
 
       </Routes>
